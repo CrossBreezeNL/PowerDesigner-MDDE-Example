@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XGenAppConfig>
+  <App>
+    <ConfigFolder>./config/</ConfigFolder>
+    <ModelFolder></ModelFolder>
+    <OutputFolder>../target/</OutputFolder>
+    <TemplateFolder>./template/</TemplateFolder>
+  </App>
+</XGenAppConfig>

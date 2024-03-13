@@ -1,0 +1,15 @@
+<o:LogicalDiagram Id="4714423B-7437-4688-987D-A1C6E1E12EF0">
+<a:ObjectID>4714423B-7437-4688-987D-A1C6E1E12EF0</a:ObjectID>
+<a:Name>MDDE Example Diagram</a:Name>
+<a:Code>MDDE_EXAMPLE_DIAGRAM</a:Code>
+<a:CreationDate>1710341890</a:CreationDate>
+<a:Creator>HarmenWessels</a:Creator>
+<xi:include href="LogicalDiagram/a_DisplayPreferences.xml" />
+<a:PaperSize>(8268, 11693)</a:PaperSize>
+<a:PageMargins>((315,354), (433,354))</a:PageMargins>
+<a:PageOrientation>1</a:PageOrientation>
+<a:PaperSource>15</a:PaperSource>
+<c:Symbols>
+<xi:include href="Symbols/MDDE_EXAMPLE_DIAGRAM_Symbol_0AABEEA6-CE00-4F9D-AC60-2FA126EF752A.xml" />
+</c:Symbols>
+</o:LogicalDiagram>

@@ -1,0 +1,61 @@
+<o:Entity Id="0A44E527-F435-4F84-95C7-3D94F4EB02AC">
+<a:ObjectID>0A44E527-F435-4F84-95C7-3D94F4EB02AC</a:ObjectID>
+<a:Name>Customer</a:Name>
+<a:Code>CUSTOMER</a:Code>
+<a:CreationDate>1710342030</a:CreationDate>
+<a:Creator>HarmenWessels</a:Creator>
+<c:Identifiers>
+<o:Identifier Id="CEC52CB6-EF59-4BE0-87AA-4B8F9065A5A7">
+<a:ObjectID>CEC52CB6-EF59-4BE0-87AA-4B8F9065A5A7</a:ObjectID>
+<a:Name>Identifier_1</a:Name>
+<a:Code>IDENTIFIER_1</a:Code>
+<a:CreationDate>1710342074</a:CreationDate>
+<a:Creator>HarmenWessels</a:Creator>
+<c:Identifier.Attributes>
+<o:EntityAttribute Ref="B297599A-EB2D-4CEE-B50E-F900ED01A577"/>
+</c:Identifier.Attributes>
+</o:Identifier>
+</c:Identifiers>
+<c:PrimaryIdentifier>
+<o:Identifier Ref="CEC52CB6-EF59-4BE0-87AA-4B8F9065A5A7"/>
+</c:PrimaryIdentifier>
+<c:Attributes>
+<o:EntityAttribute Id="B297599A-EB2D-4CEE-B50E-F900ED01A577">
+<a:ObjectID>B297599A-EB2D-4CEE-B50E-F900ED01A577</a:ObjectID>
+<a:Name>Customer ID</a:Name>
+<a:Code>CUSTOMER_ID</a:Code>
+<a:CreationDate>1710342030</a:CreationDate>
+<a:Creator>HarmenWessels</a:Creator>
+<a:DataType>I</a:DataType>
+<a:LogicalAttribute.Mandatory>1</a:LogicalAttribute.Mandatory>
+</o:EntityAttribute>
+<o:EntityAttribute Id="AA85670A-AEE8-4564-AEF2-4BE1F54CCE4D">
+<a:ObjectID>AA85670A-AEE8-4564-AEF2-4BE1F54CCE4D</a:ObjectID>
+<a:Name>Country Code</a:Name>
+<a:Code>COUNTRY_CODE</a:Code>
+<a:CreationDate>1710342140</a:CreationDate>
+<a:Creator>HarmenWessels</a:Creator>
+<a:DataType>VA3</a:DataType>
+<a:Length>3</a:Length>
+<a:AutoMigrated>1</a:AutoMigrated>
+</o:EntityAttribute>
+<o:EntityAttribute Id="A39407A1-FE6E-4AC0-A9D6-A5B79BA939A9">
+<a:ObjectID>A39407A1-FE6E-4AC0-A9D6-A5B79BA939A9</a:ObjectID>
+<a:Name>First Name</a:Name>
+<a:Code>FIRST_NAME</a:Code>
+<a:CreationDate>1710342030</a:CreationDate>
+<a:Creator>HarmenWessels</a:Creator>
+<a:DataType>VA100</a:DataType>
+<a:Length>100</a:Length>
+</o:EntityAttribute>
+<o:EntityAttribute Id="883117BE-7E06-43D0-B58C-CE47655C58DF">
+<a:ObjectID>883117BE-7E06-43D0-B58C-CE47655C58DF</a:ObjectID>
+<a:Name>Last Name</a:Name>
+<a:Code>LAST_NAME</a:Code>
+<a:CreationDate>1710342030</a:CreationDate>
+<a:Creator>HarmenWessels</a:Creator>
+<a:DataType>VA100</a:DataType>
+<a:Length>100</a:Length>
+</o:EntityAttribute>
+</c:Attributes>
+</o:Entity>

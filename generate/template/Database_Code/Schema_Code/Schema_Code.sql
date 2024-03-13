@@ -1,0 +1,1 @@
+CREATE SCHEMA [Schema_Code];

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XGenConfig>
+    <Model />
+
+    <XmlTemplate rootSectionName="Model">
+        <FileFormat commentNodeXPath="@XGAnnotation" childAccessor="_" currentAccessor="$" />
+        <Output type="output_per_element" />
+    </XmlTemplate>
+
+    <Binding>
+        <SectionModelBinding section="Model" modelXPath="/Model/RootObject/Children/Model">
+            <SectionModelBinding section="Package" modelXPath="Packages/Package">
+                <SectionModelBinding section="Entity" modelXPath="Entities/Entity">
+                    <SectionModelBinding section="Attribute" modelXPath="Attributes/EntityAttribute">
+                    </SectionModelBinding>
+                </SectionModelBinding>
+            </SectionModelBinding>
+        </SectionModelBinding>
+    </Binding>
+</XGenConfig>

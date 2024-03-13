@@ -1,0 +1,13 @@
+<o:TargetModel Id="3C7F1328-C288-482D-A5F4-D6A68E512FDD">
+<a:ObjectID>3C7F1328-C288-482D-A5F4-D6A68E512FDD</a:ObjectID>
+<a:Name>Model Driven Data Engineering (MDDE)</a:Name>
+<a:Code>MDDE_LDM</a:Code>
+<a:CreationDate>1710342325</a:CreationDate>
+<a:Creator>HarmenWessels</a:Creator>
+<a:TargetModelURL>file:///%[XEM]%/MDDE_LDM.xem</a:TargetModelURL>
+<a:TargetModelID>1626A879-DBAC-4E54-8A36-28FCB761FF3A</a:TargetModelID>
+<a:TargetModelClassID>186C8AC3-D3DC-11D3-881C-00508B03C75C</a:TargetModelClassID>
+<c:SessionShortcuts>
+<o:Shortcut Ref="B30929AE-AB8A-4ACE-939C-94EF9AEE6AE1"/>
+</c:SessionShortcuts>
+</o:TargetModel>

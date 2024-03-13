@@ -1,0 +1,18 @@
+# Visual Studio files.
+bin/
+obj/
+TestResults/
+*.cache
+*.suo
+*.user
+.vs/
+
+# PowerDesigner backup files.
+*.ldb
+
+# PowerDeComposer files.
+models/composed
+*.*compose.log
+
+# Target folder.
+target

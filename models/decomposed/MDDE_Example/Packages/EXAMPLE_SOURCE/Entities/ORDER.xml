@@ -1,0 +1,34 @@
+<o:Entity Id="61F76088-DAAF-4D88-A8DE-6129A9E5E911">
+<a:ObjectID>61F76088-DAAF-4D88-A8DE-6129A9E5E911</a:ObjectID>
+<a:Name>Order</a:Name>
+<a:Code>ORDER</a:Code>
+<a:CreationDate>1710342172</a:CreationDate>
+<a:Creator>HarmenWessels</a:Creator>
+<c:Attributes>
+<o:EntityAttribute Id="8E5694DC-314E-41B2-9085-A04A6D2AC58E">
+<a:ObjectID>8E5694DC-314E-41B2-9085-A04A6D2AC58E</a:ObjectID>
+<a:Name>Customer ID</a:Name>
+<a:Code>CUSTOMER_ID</a:Code>
+<a:CreationDate>1710342212</a:CreationDate>
+<a:Creator>HarmenWessels</a:Creator>
+<a:DataType>I</a:DataType>
+<a:AutoMigrated>1</a:AutoMigrated>
+</o:EntityAttribute>
+<o:EntityAttribute Id="239141DD-5985-4136-B24E-65A9960200CA">
+<a:ObjectID>239141DD-5985-4136-B24E-65A9960200CA</a:ObjectID>
+<a:Name>Order ID</a:Name>
+<a:Code>ORDER_ID</a:Code>
+<a:CreationDate>1710342172</a:CreationDate>
+<a:Creator>HarmenWessels</a:Creator>
+<a:DataType>I</a:DataType>
+</o:EntityAttribute>
+<o:EntityAttribute Id="A926E3A1-5F3A-4C24-A6F4-DC9F3A573D88">
+<a:ObjectID>A926E3A1-5F3A-4C24-A6F4-DC9F3A573D88</a:ObjectID>
+<a:Name>Order Date</a:Name>
+<a:Code>ORDER_DATE</a:Code>
+<a:CreationDate>1710342172</a:CreationDate>
+<a:Creator>HarmenWessels</a:Creator>
+<a:DataType>D</a:DataType>
+</o:EntityAttribute>
+</c:Attributes>
+</o:Entity>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Database Code="Model-Code" Name="Model-Name" Description="Model-Description" Session="Model$a:SessionID">
+    <Schemas>
+        <Schema Code="Package_Code" Name="Package_Name" Description="Package_Description"  XGAnnotation="@XGenXmlSection(name='Package')">
+            <Tables>
+                <Table Code="Entity_Code" Name="Entity_Name" Description="Entity_Description" XGAnnotation="@XGenXmlSection(name='Entity')">
+                    <Attributes>
+                        <Column Code="Attribute_Code" Name="Attribute_Name" Description="Attribute_Description" SqlDataType="Attribute_SqlDatatype" XGAnnotation="@XGenXmlSection(name='Attribute')" />
+                    </Attributes>
+                </Table>
+            </Tables>
+        </Schema>
+    </Schemas>
+</Database>

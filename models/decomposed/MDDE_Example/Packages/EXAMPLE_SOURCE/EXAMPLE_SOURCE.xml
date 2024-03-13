@@ -1,0 +1,22 @@
+<o:Package Id="0AABEEA6-CE00-4F9D-AC60-2FA126EF752A">
+<a:ObjectID>0AABEEA6-CE00-4F9D-AC60-2FA126EF752A</a:ObjectID>
+<a:Name>Example Source</a:Name>
+<a:Code>EXAMPLE_SOURCE</a:Code>
+<a:CreationDate>1710341958</a:CreationDate>
+<a:Creator>HarmenWessels</a:Creator>
+<c:LogicalDiagrams>
+<xi:include href="LogicalDiagrams/SOURCE_DIAGRAM/SOURCE_DIAGRAM.xml" />
+</c:LogicalDiagrams>
+<c:DefaultDiagram>
+<o:LogicalDiagram Ref="7585D600-E3C5-4A71-8673-930B7D3A80E0"/>
+</c:DefaultDiagram>
+<c:Entities>
+<xi:include href="Entities/CUSTOMER.xml" />
+<xi:include href="Entities/COUNTRY.xml" />
+<xi:include href="Entities/ORDER.xml" />
+</c:Entities>
+<c:Relationships>
+<xi:include href="Relationships/CUSTOMER___COUNTRY.xml" />
+<xi:include href="Relationships/ORDER___CUSTOMER.xml" />
+</c:Relationships>
+</o:Package>

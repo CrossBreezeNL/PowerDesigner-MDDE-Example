@@ -1,0 +1,31 @@
+<o:Relationship Id="F55C9CF8-9094-418D-B995-9AA2BB4DDA6E">
+<a:ObjectID>F55C9CF8-9094-418D-B995-9AA2BB4DDA6E</a:ObjectID>
+<a:Name>Order - Customer</a:Name>
+<a:Code>ORDER___CUSTOMER</a:Code>
+<a:CreationDate>1710342212</a:CreationDate>
+<a:Creator>HarmenWessels</a:Creator>
+<a:Entity1ToEntity2RoleCardinality>0,n</a:Entity1ToEntity2RoleCardinality>
+<a:Entity2ToEntity1RoleCardinality>0,1</a:Entity2ToEntity1RoleCardinality>
+<c:Object1>
+<o:Entity Ref="61F76088-DAAF-4D88-A8DE-6129A9E5E911"/>
+</c:Object1>
+<c:Object2>
+<o:Entity Ref="0A44E527-F435-4F84-95C7-3D94F4EB02AC"/>
+</c:Object2>
+<c:Joins>
+<o:RelationshipJoin Id="2486B451-DC7D-41EA-8BA9-B9EB9F0CF94A">
+<a:ObjectID>2486B451-DC7D-41EA-8BA9-B9EB9F0CF94A</a:ObjectID>
+<a:CreationDate>1710342212</a:CreationDate>
+<a:Creator>HarmenWessels</a:Creator>
+<c:Object1>
+<o:EntityAttribute Ref="B297599A-EB2D-4CEE-B50E-F900ED01A577"/>
+</c:Object1>
+<c:Object2>
+<o:EntityAttribute Ref="8E5694DC-314E-41B2-9085-A04A6D2AC58E"/>
+</c:Object2>
+</o:RelationshipJoin>
+</c:Joins>
+<c:ParentIdentifier>
+<o:Identifier Ref="CEC52CB6-EF59-4BE0-87AA-4B8F9065A5A7"/>
+</c:ParentIdentifier>
+</o:Relationship>

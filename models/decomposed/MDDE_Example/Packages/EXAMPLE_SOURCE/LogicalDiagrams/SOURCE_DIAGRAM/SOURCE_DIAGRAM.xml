@@ -1,0 +1,19 @@
+<o:LogicalDiagram Id="7585D600-E3C5-4A71-8673-930B7D3A80E0">
+<a:ObjectID>7585D600-E3C5-4A71-8673-930B7D3A80E0</a:ObjectID>
+<a:Name>Source Diagram</a:Name>
+<a:Code>SOURCE_DIAGRAM</a:Code>
+<a:CreationDate>1710341958</a:CreationDate>
+<a:Creator>HarmenWessels</a:Creator>
+<xi:include href="LogicalDiagram/a_DisplayPreferences.xml" />
+<a:PaperSize>(8268, 11693)</a:PaperSize>
+<a:PageMargins>((315,354), (433,354))</a:PageMargins>
+<a:PageOrientation>1</a:PageOrientation>
+<a:PaperSource>15</a:PaperSource>
+<c:Symbols>
+<xi:include href="Symbols/SOURCE_DIAGRAM_Symbol_111FBD07-0BA1-47E2-A254-51C48D7806B5.xml" />
+<xi:include href="Symbols/SOURCE_DIAGRAM_Symbol_F55C9CF8-9094-418D-B995-9AA2BB4DDA6E.xml" />
+<xi:include href="Symbols/SOURCE_DIAGRAM_Entity_85E84D2D-5A89-434F-99BF-79E000B09B33.xml" />
+<xi:include href="Symbols/SOURCE_DIAGRAM_Entity_0A44E527-F435-4F84-95C7-3D94F4EB02AC.xml" />
+<xi:include href="Symbols/SOURCE_DIAGRAM_Entity_61F76088-DAAF-4D88-A8DE-6129A9E5E911.xml" />
+</c:Symbols>
+</o:LogicalDiagram>

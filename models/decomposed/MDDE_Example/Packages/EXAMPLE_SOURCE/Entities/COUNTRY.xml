@@ -1,0 +1,43 @@
+<o:Entity Id="85E84D2D-5A89-434F-99BF-79E000B09B33">
+<a:ObjectID>85E84D2D-5A89-434F-99BF-79E000B09B33</a:ObjectID>
+<a:Name>Country</a:Name>
+<a:Code>COUNTRY</a:Code>
+<a:CreationDate>1710342082</a:CreationDate>
+<a:Creator>HarmenWessels</a:Creator>
+<c:Identifiers>
+<o:Identifier Id="B25117CF-45A5-4123-BCA2-2B05B1F0722F">
+<a:ObjectID>B25117CF-45A5-4123-BCA2-2B05B1F0722F</a:ObjectID>
+<a:Name>Identifier_1</a:Name>
+<a:Code>IDENTIFIER_1</a:Code>
+<a:CreationDate>1710342082</a:CreationDate>
+<a:Creator>HarmenWessels</a:Creator>
+<c:Identifier.Attributes>
+<o:EntityAttribute Ref="0BEDB2E1-71DD-411E-BF6B-881184DE147D"/>
+</c:Identifier.Attributes>
+</o:Identifier>
+</c:Identifiers>
+<c:PrimaryIdentifier>
+<o:Identifier Ref="B25117CF-45A5-4123-BCA2-2B05B1F0722F"/>
+</c:PrimaryIdentifier>
+<c:Attributes>
+<o:EntityAttribute Id="0BEDB2E1-71DD-411E-BF6B-881184DE147D">
+<a:ObjectID>0BEDB2E1-71DD-411E-BF6B-881184DE147D</a:ObjectID>
+<a:Name>Country Code</a:Name>
+<a:Code>COUNTRY_CODE</a:Code>
+<a:CreationDate>1710342082</a:CreationDate>
+<a:Creator>HarmenWessels</a:Creator>
+<a:DataType>VA3</a:DataType>
+<a:Length>3</a:Length>
+<a:LogicalAttribute.Mandatory>1</a:LogicalAttribute.Mandatory>
+</o:EntityAttribute>
+<o:EntityAttribute Id="C166216F-C92C-4113-8A9C-FAF0503CFC98">
+<a:ObjectID>C166216F-C92C-4113-8A9C-FAF0503CFC98</a:ObjectID>
+<a:Name>Name</a:Name>
+<a:Code>NAME</a:Code>
+<a:CreationDate>1710342082</a:CreationDate>
+<a:Creator>HarmenWessels</a:Creator>
+<a:DataType>VA100</a:DataType>
+<a:Length>100</a:Length>
+</o:EntityAttribute>
+</c:Attributes>
+</o:Entity>
