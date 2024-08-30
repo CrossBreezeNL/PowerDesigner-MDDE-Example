@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <XGenConfig>
-    <Model />
+    <Model  />
 
     <XmlTemplate rootSectionName="Model">
-        <FileFormat commentNodeXPath="@XGAnnotation" childAccessor="_" currentAccessor="$" />
+        <FileFormat commentNodeXPath="@XGAnnotation" childAccessor="_" currentAccessor="-" />
         <Output type="output_per_element" />
     </XmlTemplate>
 
