@@ -28,7 +28,15 @@
         },
         "preCopyScript": {
             "type": "string",
-            "metadata": "Script that is executed before the copying in the sink takes place (in this example with TRUNCATE TABLE)"
+            "metadata": "Script that is executed before the copying in the sink takes place (for example TRUNCATE TABLE)"
+        },
+        "sourceType": {
+            "type": "string",
+            "metadata": "The type of source where the data is copied from"
+        },
+        "sinkType": {
+            "type": "string",
+            "metadata": "The type of sink where the data is copied to"
         }
     },
     "variables": {
@@ -36,14 +44,14 @@
     },
     "resources": [
         {
-            "name": "[concat(parameters('factoryName'), '/PipelineCopyDataFrom ', parameters('sourceName'))]",
+            "name": "[concat(parameters('factoryName'), '/PipelineCopyDataFrom')]",
             "type": "Microsoft.DataFactory/factories/pipelines",
             "apiVersion": "2018-06-01",
             "properties": {
                 "activities": [
                     {
-                        "name": "[concat(parameters('sourceName'), ' naar ', parameters('destinationName'))]",
-                        "description": "[concat('Kopiëren van de tabel ', parameters('sourceTable'), ' naar ', parameters('destinationTable'))]",
+                        "name": "Copy Data Activity",
+                        "description": "[concat('Copy data from table ', parameters('sourceTableName'), ' to ', parameters('destinationTableName))]",
                         "type": "Copy",
                         "dependsOn": [],
                         "policy": {
@@ -56,23 +64,23 @@
                         "userProperties": [
                             {
                                 "name": "Source",
-                                "value": "dbo.Customer"
+                                "value": "[parameters('sourceTableName')]"
                             },
                             {
                                 "name": "Destination",
-                                "value": "dbo.Customer"
+                                "value": "[parameters('destinationTableName')]"
                             }
                         ],
                         "typeProperties": {
                             "source": {
-                                "type": "AzureSqlSource",
-                                "sqlReaderQuery": "SELECT [ID]\n      ,[FIRSTNAME]\n      ,[LASTNAME]\n      ,[CITY]\n      ,[COUNTRY]\n      ,[PHONE]\n      ,CAST(GetDATE() as DATETime) as [CreatedAt]\n  FROM [dbo].[Customer]",
+                                "type": "[parameters('sourceType')]",
+                                "sqlReaderQuery": "[parameters('sourceSQLQuery')]",
                                 "queryTimeout": "02:00:00",
                                 "partitionOption": "None"
                             },
                             "sink": {
-                                "type": "AzureSqlSink",
-                                "preCopyScript": "IF object_ID ('dbo.Customer') IS NOT NULL \nBEGIN\nTRUNCATE TABLE dbo.Customer\nEND",
+                                "type": "[parameters('sinkType')]",
+                                "preCopyScript": "[parameters('preCopyScript')]",
                                 "writeBehavior": "insert",
                                 "sqlWriterUseTableLock": false,
                                 "tableOption": "autoCreate",
@@ -90,14 +98,14 @@
                         },
                         "inputs": [
                             {
-                                "referenceName": "AzureSqlDB",
+                                "referenceName": "[concat(parameters('factoryName'), '/sourceDataset')]",
                                 "type": "DatasetReference",
                                 "parameters": {}
                             }
                         ],
                         "outputs": [
                             {
-                                "referenceName": "DestinationStaging",
+                                "referenceName": "[concat(parameters('factoryName'), '/destinationDataset')]",
                                 "type": "DatasetReference",
                                 "parameters": {}
                             }
@@ -111,8 +119,8 @@
                 "lastPublishTime": "2024-09-26T14:55:06Z"
             },
             "dependsOn": [
-                "[concat(variables('factoryId'), '/datasets/AzureSqlDB')]",
-                "[concat(variables('factoryId'), '/datasets/DestinationStaging')]"
+                "[concat(variables('factoryId'), '/datasets/sourceDataset')]",
+                "[concat(variables('factoryId'), '/datasets/destinationDataset')]"
             ]
         },
         {
