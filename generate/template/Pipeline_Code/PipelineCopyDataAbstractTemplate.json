@@ -6,11 +6,29 @@
             "type": "string",
             "metadata": "Data Factory-naam"
         },
-        "ExampleSourceKoppeling": {
-            "type": "string"
+        "sourceLinkedService": {
+            "type": "string",
+            "metadata": "Linked service for the source"
         },
-        "StagingKoppeling": {
-            "type": "string"
+        "destinationLinkedService": {
+            "type": "string",
+            "metadata": "Linked service for the destination"
+        },
+        "sourceTableName": {
+            "type": "string",
+            "metadata": "Source table name"
+        },
+        "destinationTableName": {
+            "type": "string",
+            "metadata": "Destination table name"
+        },
+        "sourceSQLQuery": {
+            "type": "string",
+            "metadata": "SQL query to get the data of the source"
+        },
+        "preCopyScript": {
+            "type": "string",
+            "metadata": "Script that is executed before the copying in the sink takes place (in this example with TRUNCATE TABLE)"
         }
     },
     "variables": {
