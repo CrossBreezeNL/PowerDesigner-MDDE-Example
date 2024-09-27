@@ -37,6 +37,14 @@
         "sinkType": {
             "type": "string",
             "metadata": "The type of sink where the data is copied to"
+        },
+        "sourceSchema": {
+            "type": "string",
+            "metadata": "The schema of the source"
+        },
+        "sinkSchema": {
+            "type": "string",
+            "metadata": "The schema of the sink"
         }
     },
     "variables": {
@@ -74,13 +82,14 @@
                         "typeProperties": {
                             "source": {
                                 "type": "[parameters('sourceType')]",
-                                "sqlReaderQuery": "[parameters('sourceSQLQuery')]",
+                                "sqlReaderQuery": "[concat(parameters('sourceSQLQuery'), ', CAST(GetDATE() as DATETIME) as [CreatedAt]')]",
                                 "queryTimeout": "02:00:00",
-                                "partitionOption": "None"
+                                "partitionOption": "None",
+                                "metadata": "The sourceSQLQuery has a standard extra column CreatedAt to keep a timestamp"
                             },
                             "sink": {
                                 "type": "[parameters('sinkType')]",
-                                "preCopyScript": "[parameters('preCopyScript')]",
+                                "preCopyScript": "[concat('IF object_ID (''', parameters('sinkSchema'), '.', parameters('sinkTableName'), ''') IS NOT NULL \nBEGIN\nTRUNCATE TABLE ', parameters('sinkSchema'), '.', parameters('sinkTableName'), '\nEND')]",
                                 "writeBehavior": "insert",
                                 "sqlWriterUseTableLock": false,
                                 "tableOption": "autoCreate",
@@ -124,65 +133,39 @@
             ]
         },
         {
-            "name": "[concat(parameters('factoryName'), '/AzureSqlDB')]",
+            "name": "[concat(parameters('factoryName'), '/sourceDataset')]",
             "type": "Microsoft.DataFactory/factories/datasets",
             "apiVersion": "2018-06-01",
             "properties": {
                 "linkedServiceName": {
-                    "referenceName": "[parameters('ExampleSourceKoppeling')]",
-                    "type": "LinkedServiceReference"
-                },
-                "annotations": [],
-                "type": "AzureSqlTable",
-                "schema": [
-                    {
-                        "name": "ID",
-                        "type": "int",
-                        "precision": 10
-                    },
-                    {
-                        "name": "FIRSTNAME",
-                        "type": "varchar"
-                    },
-                    {
-                        "name": "LASTNAME",
-                        "type": "varchar"
-                    },
-                    {
-                        "name": "CITY",
-                        "type": "varchar"
-                    },
-                    {
-                        "name": "COUNTRY",
-                        "type": "varchar"
-                    },
-                    {
-                        "name": "PHONE",
-                        "type": "varchar"
-                    }
-                ],
-                "typeProperties": {
-                    "schema": "dbo",
-                    "table": "Customer"
-                }
-            },
-            "dependsOn": []
-        },
-        {
-            "name": "[concat(parameters('factoryName'), '/DestinationStaging')]",
-            "type": "Microsoft.DataFactory/factories/datasets",
-            "apiVersion": "2018-06-01",
-            "properties": {
-                "linkedServiceName": {
-                    "referenceName": "[parameters('StagingKoppeling')]",
+                    "referenceName": "[parameters('sourceLinkedService')]",
                     "type": "LinkedServiceReference"
                 },
                 "annotations": [],
                 "type": "AzureSqlTable",
                 "schema": [],
                 "typeProperties": {
-                    "schema": "dbo",
-                    "table": "Customer"
+                    "schema": "[parameters('sourceSchema')]",
+                    "table": "[parameters('sourceTableName')]"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "name": "[concat(parameters('factoryName'), '/destinationDataset')]",
+            "type": "Microsoft.DataFactory/factories/datasets",
+            "apiVersion": "2018-06-01",
+            "properties": {
+                "linkedServiceName": {
+                    "referenceName": "[parameters('destinationLinkedService')]",
+                    "type": "LinkedServiceReference"
+                },
+                "annotations": [],
+                "type": "AzureSqlTable",
+                "schema": [],
+                "typeProperties": {
+                    "schema": "[parameters('sinkSchema')]",
+                    "table": "[parameters('sinkTableName')]"
                 }
             },
             "dependsOn": []
