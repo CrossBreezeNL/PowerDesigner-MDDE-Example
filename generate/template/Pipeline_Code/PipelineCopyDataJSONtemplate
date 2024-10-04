@@ -1,0 +1,50 @@
+{
+    "name": "KopieerData",
+    "type": "Copy",
+    "dependsOn": [],
+    "policy": {
+        "timeout": "0.12:00:00",
+        "retry": 0,
+        "retryIntervalInSeconds": 30,
+        "secureOutput": false,
+        "secureInput": false
+    },
+    "userProperties": [],
+    "typeProperties": {
+        "source": {
+            "type": "AzureSqlSource",
+            "sqlReaderQuery": "SELECT [AttributeName]\n      ,CAST(GetDATE() as DATETime) as [CreatedAt]\n  FROM [dbo].[SourceTableName]",
+            "queryTimeout": "02:00:00",
+            "partitionOption": "None"
+        },
+        "sink": {
+            "type": "AzureSqlSink",
+            "preCopyScript": "IF object_ID ('dbo.SOURCETABLENAME') IS NOT NULL \nBEGIN\nTRUNCATE TABLE dbo.SOURCETABLENAME\nEND",
+            "writeBehavior": "insert",
+            "sqlWriterUseTableLock": false,
+            "tableOption": "autoCreate",
+            "disableMetricsCollection": false
+        },
+        "enableStaging": false,
+        "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+                "allowDataTruncation": true,
+                "treatBooleanAsNumber": false
+            }
+        }
+    },
+    "inputs": [
+        {
+            "referenceName": "SourceDatabaseName",
+            "type": "DatasetReference"
+        }
+    ],
+    "outputs": [
+        {
+            "referenceName": "SourceDatabaseName",
+            "type": "DatasetReference"
+        }
+    ]
+}
