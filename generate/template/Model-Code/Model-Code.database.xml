@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Database Code="Model-Code" Name="Model-Name" Description="Model-Description" Session="Model-SessionID">
+<Database Code="Model_Code" Name="Model_Name" Description="Model_Description" Session="Model-SessionID">
     <Schemas>
         <Schema Code="Package_Code" Name="Package_Name" Description="Package_Description"  XGAnnotation="@XGenXmlSection(name='Package')">
             <Tables>

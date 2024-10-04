@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XGenConfig>
+    <Model  />
+
+    <TextTemplate rootSectionName="PipelineCopyDataADF">
+        <FileFormat commentNodeXPath="@XGAnnotation" currentAccessor="_" />
+        <Output type="output_per_element" />
+        <TextSections>
+          <TextSection name="Column" begin="[Column_Code]" end="," />
+        </TextSections>
+    </TextTemplate>
+
+    <Binding>
+        <SectionModelBinding section="PipelineCopyDataADF" modelXPath="/Database/Schemas/Schema/Tables/Table" placeholderName="Table">
+            <Placeholders>
+                <Placeholder name="Database" modelXPath="/Database" />
+            </Placeholders>
+            <SectionModelBinding section="Column" modelXPath="Columns/Column" />
+        </SectionModelBinding>
+    </Binding>
+</XGenConfig>

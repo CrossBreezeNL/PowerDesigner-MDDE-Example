@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Database Code="MDDE_EXAMPLE" Name="MDDE Example" Description="">
+    <Schemas>
+        <Schema Code="EXAMPLE_SOURCE" Name="Example Source" Description="">
+            <Tables>
+                <Table Code="COUNTRY" Name="Country" Description="">
+                    <Columns>
+                        <Column Code="COUNTRY_CODE" Name="Country Code" Description="" SqlDataType="VARCHAR(3)" />
+                        <Column Code="NAME" Name="Name" Description="" SqlDataType="VARCHAR(100)" />
+                    </Columns>
+                </Table>
+                <Table Code="CUSTOMER" Name="Customer" Description="">
+                    <Columns>
+                        <Column Code="CUSTOMER_ID" Name="Customer ID" Description="" SqlDataType="INT" />
+                        <Column Code="COUNTRY_CODE" Name="Country Code" Description="" SqlDataType="VARCHAR(3)" />
+                        <Column Code="FIRST_NAME" Name="First Name" Description="" SqlDataType="VARCHAR(100)" />
+                        <Column Code="LAST_NAME" Name="Last Name" Description="" SqlDataType="VARCHAR(100)" />
+                    </Columns>
+                </Table>
+            </Tables>
+        </Schema>
+    </Schemas>
+</Database>
