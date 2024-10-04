@@ -13,13 +13,13 @@
     "typeProperties": {
         "source": {
             "type": "AzureSqlSource",
-            "sqlReaderQuery": "SELECT [AttributeName]\n      ,CAST(GetDATE() as DATETime) as [CreatedAt]\n  FROM [dbo].[SourceTableName]",
+            "sqlReaderQuery": "SELECT [Column_Code]\n ,CAST(GetDATE() as DATETime) as [CreatedAt]\n  FROM [dbo].[Table_Code]",
             "queryTimeout": "02:00:00",
             "partitionOption": "None"
         },
         "sink": {
             "type": "AzureSqlSink",
-            "preCopyScript": "IF object_ID ('dbo.SOURCETABLENAME') IS NOT NULL \nBEGIN\nTRUNCATE TABLE dbo.SOURCETABLENAME\nEND",
+            "preCopyScript": "IF object_ID ('dbo.Table_Code') IS NOT NULL \nBEGIN\nTRUNCATE TABLE dbo.Table_Code\nEND",
             "writeBehavior": "insert",
             "sqlWriterUseTableLock": false,
             "tableOption": "autoCreate",
