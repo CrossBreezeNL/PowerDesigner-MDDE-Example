@@ -2,8 +2,8 @@
 <XGenConfig>
     <Model  />
 
-    <TextTemplate rootSectionName="PipelineCopyDataADF">
-        <FileFormat commentNodeXPath="@XGAnnotation" currentAccessor="_" />
+    <TextTemplate rootSectionName="Table">
+        <FileFormat commentNodeXPath="@XGAnnotation" />
         <Output type="output_per_element" />
         <TextSections>
           <TextSection name="Column" begin="[Column_Code]" end="," />
@@ -11,7 +11,7 @@
     </TextTemplate>
 
     <Binding>
-        <SectionModelBinding section="PipelineCopyDataADF" modelXPath="/Database/Schemas/Schema/Tables/Table" placeholderName="Table">
+        <SectionModelBinding section="Table" modelXPath="/Database/Schemas/Schema/Tables/Table">
             <Placeholders>
                 <Placeholder name="Database" modelXPath="/Database" />
             </Placeholders>
