@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XGenConfig>
+    <Model  />
+    <TextTemplate rootSectionName="Schema">
+        <FileFormat currentAccessor="_" singleLineCommentPrefix="--" annotationPrefix="@XGen" annotationArgsPrefix="(" annotationArgsSuffix=")" />
+        <Output type="output_per_element" />
+    </TextTemplate>
+    <Binding>
+        <SectionModelBinding section="Schema" modelXPath="/Database/Schemas/Schema">
+                <Placeholders>
+                    <Placeholder name="Database" modelXPath="../.."/> 
+                </Placeholders>
+                <SectionModelBinding section="Table" modelXPath="Tables/Table">
+                    <Placeholders>
+                        <Placeholder name="Schema" modelXPath="../.."/> 
+                    </Placeholders>
+                    <SectionModelBinding section="Column" modelXPath="Columns/Column"/> 
+                </SectionModelBinding>
+        </SectionModelBinding>
+    </Binding>
+</XGenConfig>
