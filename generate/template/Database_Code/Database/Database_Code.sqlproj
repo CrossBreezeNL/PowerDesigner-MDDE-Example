@@ -3,13 +3,22 @@
   <Sdk Name="Microsoft.Build.Sql" Version="0.1.12-preview" />
   <PropertyGroup>
     <Name>Database_Code</Name>
-    <ProjectGuid>{54EBE3D4-63E0-41B8-8A83-4390DF39E90E}</ProjectGuid>
+    <ProjectGuid>{54ebe3d4-63e0-41b8-8a83-4390df39e90e}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider</DSP>
     <ModelCollation>1033, CI</ModelCollation>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Schema_Code" />
     <Folder Include="Schema_Code\Tables" />
+    <Folder Include="Ignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Schema_Code\Tables\Table_Code.sql" />
+    <Build Include="Schema_Code\Schema_Code.sql" />
+    <Build Include="Ignore\Column_SqlDataType.sql" />
   </ItemGroup>
   <Target Name="BeforeBuild">
     <Delete Files="$(BaseIntermediateOutputPath)\project.assets.json" />
