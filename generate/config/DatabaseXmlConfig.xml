@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XGenConfig>
+    <Model  />
+
+    <XmlTemplate rootSectionName="Database">
+        <Output type="output_per_element" />
+        <XmlSections>
+            <XmlSection name="Schema" templateXPath="/Project/ItemGroup/Folder[starts-with(@Include,'Schema')]" />
+            <XmlSection name="Ignore" templateXPath="/Project/ItemGroup/*[starts-with(@Include,'Ignore')]" />
+            <XmlSection name="Schema" templateXPath="/Project/ItemGroup/Build[starts-with(@Include,'Schema')]" />
+        </XmlSections>
+    </XmlTemplate>
+
+    <Binding>
+        <SectionModelBinding section="Database" modelXPath="/Database">
+            <SectionModelBinding section="Schema" modelXPath="Schemas/Schema"/>
+            <SectionModelBinding section="Ignore" modelXPath=".[0 = 1]"/>
+            <!-- <SectionModelBinding section="Database" modelXPath="/Database/Schemas/Schema">
+
+            </SectionModelBinding> -->
+
+        </SectionModelBinding>
+    </Binding>
+</XGenConfig>
