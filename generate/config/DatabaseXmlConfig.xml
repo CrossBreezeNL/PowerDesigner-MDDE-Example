@@ -8,17 +8,15 @@
             <XmlSection name="Schema" templateXPath="/Project/ItemGroup/Folder[starts-with(@Include,'Schema')]" />
             <XmlSection name="Ignore" templateXPath="/Project/ItemGroup/*[starts-with(@Include,'Ignore')]" />
             <XmlSection name="Schema" templateXPath="/Project/ItemGroup/Build[starts-with(@Include,'Schema')]" />
+            <XmlSection name="Table" templateXPath="/Project/ItemGroup/Build[contains(@Include,'Table')]" />
         </XmlSections>
     </XmlTemplate>
 
     <Binding>
         <SectionModelBinding section="Database" modelXPath="/Database">
             <SectionModelBinding section="Schema" modelXPath="Schemas/Schema"/>
+            <SectionModelBinding section="Table" modelXPath="/Tables/Table"/>
             <SectionModelBinding section="Ignore" modelXPath=".[0 = 1]"/>
-            <!-- <SectionModelBinding section="Database" modelXPath="/Database/Schemas/Schema">
-
-            </SectionModelBinding> -->
-
         </SectionModelBinding>
     </Binding>
 </XGenConfig>
