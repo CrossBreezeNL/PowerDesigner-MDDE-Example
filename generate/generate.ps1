@@ -29,11 +29,12 @@ cmd /c $XgGenCmd `
     -fll INFO `
     -fld $TargetLogFile `
     -c .\XGenAppConfig.xml `
-    -mtc "MDDE_Example/MDDE_Exampl.ldm::Model-Code/Model-Code.database.xml::ModelXmlConfig.xml" `
     -mtc "MDDE_Example/MDDE_Example.xml::Database_Code/Pipeline/PipelineCopyData_Table_Code.json::PipelineADFXmlConfig.xml" `
     -mtc "MDDE_Example/MDDE_Example.xml::Database_Code/Database/Database_Code.sqlproj::DatabaseXmlConfig.xml" `
     -mtc "MDDE_Example/MDDE_Example.xml::Database_Code/Database/Schema_Code/Schema_Code.sql::SchemaTextConfig.xml" `
     -mtc "MDDE_Example/MDDE_Example.xml::Database_Code/Database/Schema_Code/Tables/Table_Code.sql::TableTextConfig.xml"
+    # TODO: The generation of the Database XML file is disabled for now, since there is an issue with namespaces.
+    #-mtc "MDDE_Example/MDDE_Example.ldm::Model-Code/Model-Code.database.xml::ModelXmlConfig.xml" 
 
 # Check whether the generation ended with an error.
 if ($LASTEXITCODE -eq 1) {

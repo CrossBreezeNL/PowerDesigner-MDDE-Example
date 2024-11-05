@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <XGenConfig>
-    <Model  />
+    <Model namespaceAware="true">
+        <ModelNamespaces>
+            <ModelNamespace prefix="a" namespace="attribute" />
+            <ModelNamespace prefix="c" namespace="collection" />
+            <ModelNamespace prefix="o" namespace="object" />
+            <ModelNamespace prefix="xi" namespace="http://www.w3.org/2001/XInclude" />
+        </ModelNamespaces>
+    </Model>
 
     <XmlTemplate rootSectionName="Model">
         <FileFormat commentNodeXPath="@XGAnnotation" childAccessor="_" currentAccessor="-" />

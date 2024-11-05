@@ -4,6 +4,7 @@ This folder contains dependencies for this repository. These dependencies are:
 
 - [CrossGenerate](./CrossBreeze.CrossGenerate/)
 - [PowerDeComposer](./CrossBreeze.PowerDeComposer/)
+- [PowerDesigner-MDDE-Extension](./CrossBreeze.PowerDesigner-MDDE-Extension/)
 
 ## Update a dependency
 
