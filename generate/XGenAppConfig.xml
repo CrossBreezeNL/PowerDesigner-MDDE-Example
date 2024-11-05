@@ -2,7 +2,7 @@
 <XGenAppConfig>
   <App>
     <ConfigFolder>./config/</ConfigFolder>
-    <ModelFolder></ModelFolder>
+    <ModelFolder>../models/decomposed/</ModelFolder>
     <OutputFolder>../target/</OutputFolder>
     <TemplateFolder>./template/</TemplateFolder>
   </App>
