@@ -7,7 +7,7 @@
         <XmlSections>
             <XmlSection name="Schema" templateXPath="/Project/ItemGroup/Folder[starts-with(@Include,'Schema')]" />
             <XmlSection name="Ignore" templateXPath="/Project/ItemGroup/*[starts-with(@Include,'Ignore')]" />
-            <XmlSection name="Schema" templateXPath="/Project/ItemGroup/Build[starts-with(@Include,'Schema')]" />
+            <XmlSection name="Schema" templateXPath="/Project/ItemGroup/Build[ends-with(@Include,'Schema_Code.sql')]" />
             <XmlSection name="Table" templateXPath="/Project/ItemGroup/Build[contains(@Include,'Table')]" />
         </XmlSections>
     </XmlTemplate>
@@ -15,7 +15,11 @@
     <Binding>
         <SectionModelBinding section="Database" modelXPath="/Database">
             <SectionModelBinding section="Schema" modelXPath="Schemas/Schema"/>
-            <SectionModelBinding section="Table" modelXPath="/Tables/Table"/>
+            <SectionModelBinding section="Table" modelXPath="Schemas/Schema/Tables/Table">
+                <!-- <Placeholders>
+                    <Placeholder name="Schema" modelXPath="Schemas/Schema"/>
+                </Placeholders> -->
+            </SectionModelBinding>
             <SectionModelBinding section="Ignore" modelXPath=".[0 = 1]"/>
         </SectionModelBinding>
     </Binding>
