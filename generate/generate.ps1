@@ -11,7 +11,7 @@ $TargetLogFile = Join-Path $TargetFolder "generate.log"
 # Remove the target folder if it exists.
 if (Test-Path $TargetFolder) {
     Write-Host "[$(Get-Date -format 'yyyy-MM-dd HH:mm:ss')] [INFO] Removing existing target directory"
-    Remove-Item $TargetFolder -Recurse
+    Remove-Item $TargetFolder -Recurse -Force
 }
 # Create the target folder.
 $TargetDirectoryObj = New-Item -Path $TargetFolder -ItemType "directory"
@@ -29,10 +29,14 @@ cmd /c $XgGenCmd `
     -fll INFO `
     -fld $TargetLogFile `
     -c .\XGenAppConfig.xml `
-    -mtc "MDDE_Example/MDDE_Example.xml::Database_Code/Pipeline/PipelineCopyData_Table_Code.json::PipelineADFXmlConfig.xml" `
-    -mtc "MDDE_Example/MDDE_Example.xml::Database_Code/Database/Database_Code.sqlproj::DatabaseXmlConfig.xml" `
-    -mtc "MDDE_Example/MDDE_Example.xml::Database_Code/Database/Schema_Code/Schema_Code.sql::SchemaTextConfig.xml" `
-    -mtc "MDDE_Example/MDDE_Example.xml::Database_Code/Database/Schema_Code/Tables/Table_Code.sql::TableTextConfig.xml"
+    -mtc "MDDE_Example/MDDE_Example.xml::Database/Pipeline/PipelineCopyData_Table_Code.json::PipelineADFXmlConfig.xml" `
+    -mtc "MDDE_Example/MDDE_Example.xml::Database/Database_Code/Database_Code.sqlproj::DatabaseXmlConfig.xml" `
+    -mtc "MDDE_Example/MDDE_Example.xml::Database/Database_Code/Schema_Code/Schema_Code.sql::SchemaTextConfig.xml" `
+    -mtc "MDDE_Example/MDDE_Example.xml::Database/Database_Code/Schema_Code/Tables/Table_Code.sql::TableTextConfig.xml" `
+    -mtc "MDDE_Example/MDDE_Example.xml::Database/Staging_Database_Code/Staging_Database_Code.sqlproj::DatabaseXmlConfig.xml" `
+    -mtc "MDDE_Example/MDDE_Example.xml::Database/Staging_Database_Code/Schema_Code/Staging_Schema_Code.sql::SchemaTextConfig.xml" `
+    -mtc "MDDE_Example/MDDE_Example.xml::Database/Staging_Database_Code/Schema_Code/Tables/Table_Code.sql::TableTextConfig.xml" `
+    -mtc "MDDE_Example/MDDE_Example.xml::Database/Database_Code.sln::SolutionTextConfig.xml"
     # TODO: The generation of the Database XML file is disabled for now, since there is an issue with namespaces.
     #-mtc "MDDE_Example/MDDE_Example.ldm::Model-Code/Model-Code.database.xml::ModelXmlConfig.xml" 
 

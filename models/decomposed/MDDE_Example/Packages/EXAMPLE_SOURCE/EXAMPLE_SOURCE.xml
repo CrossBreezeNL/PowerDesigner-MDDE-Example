@@ -14,9 +14,11 @@
 <xi:include href="Entities/CUSTOMER.xml" />
 <xi:include href="Entities/COUNTRY.xml" />
 <xi:include href="Entities/ORDER.xml" />
+<xi:include href="Entities/ORDER_DETAIL.xml" />
 </c:Entities>
 <c:Relationships>
 <xi:include href="Relationships/CUSTOMER___COUNTRY.xml" />
 <xi:include href="Relationships/ORDER___CUSTOMER.xml" />
+<xi:include href="Relationships/ORDER_DETAIL___ORDER.xml" />
 </c:Relationships>
 </o:Package>

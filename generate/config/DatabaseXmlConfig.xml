@@ -16,9 +16,9 @@
         <SectionModelBinding section="Database" modelXPath="/Database">
             <SectionModelBinding section="Schema" modelXPath="Schemas/Schema"/>
             <SectionModelBinding section="Table" modelXPath="Schemas/Schema/Tables/Table">
-                <!-- <Placeholders>
-                    <Placeholder name="Schema" modelXPath="Schemas/Schema"/>
-                </Placeholders> -->
+                <Placeholders>
+                    <Placeholder name="Schema" modelXPath="../.."/>
+                </Placeholders>
             </SectionModelBinding>
             <SectionModelBinding section="Ignore" modelXPath=".[0 = 1]"/>
         </SectionModelBinding>
