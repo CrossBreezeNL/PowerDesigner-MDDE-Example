@@ -36,7 +36,8 @@ cmd /c $XgGenCmd `
     -mtc "MDDE_Example/MDDE_Example.xml::Database/Staging_Database_Code/Staging_Database_Code.sqlproj::DatabaseXmlConfig.xml" `
     -mtc "MDDE_Example/MDDE_Example.xml::Database/Staging_Database_Code/Schema_Code/Staging_Schema_Code.sql::SchemaTextConfig.xml" `
     -mtc "MDDE_Example/MDDE_Example.xml::Database/Staging_Database_Code/Schema_Code/Tables/Table_Code.sql::TableTextConfig.xml" `
-    -mtc "MDDE_Example/MDDE_Example.xml::Database/Database_Code.sln::SolutionTextConfig.xml"
+    -mtc "MDDE_Example/MDDE_Example.xml::Database/Database_Code.sln::SolutionTextConfig.xml"`
+    -mtc "MDDE_Example/MDDE_Example.xml::Database/Pipeline/Airflow.py::AirflowTextConfig.xml"
     # TODO: The generation of the Database XML file is disabled for now, since there is an issue with namespaces.
     #-mtc "MDDE_Example/MDDE_Example.ldm::Model-Code/Model-Code.database.xml::ModelXmlConfig.xml" 
 
