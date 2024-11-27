@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Model Id="4D9B230E-B944-48EC-A057-3A24997319AD" Code="MDDE_EXAMPLE" Name="MDDE Example">
+  <Packages>
+    <Package Id="0AABEEA6-CE00-4F9D-AC60-2FA126EF752A" Code="EXAMPLE_SOURCE" Name="Example Source">
+      <Entities>
+        <Entity Id="85E84D2D-5A89-434F-99BF-79E000B09B33" Code="COUNTRY" Name="Country">
+          <Attributes>
+            <Attribute Id="0BEDB2E1-71DD-411E-BF6B-881184DE147D" Code="COUNTRY_CODE" Name="Country Code" Ordinal="1" PdDataType="VA3" PdLength="3" PdPrecision="0" Primary="TRUE" Mandatory="TRUE"></Attribute>
+            <Attribute Id="C166216F-C92C-4113-8A9C-FAF0503CFC98" Code="NAME" Name="Name" Ordinal="2" PdDataType="VA100" PdLength="100" PdPrecision="0"></Attribute>
+          </Attributes>
+          <Identifiers>
+            <Identifier Id="B25117CF-45A5-4123-BCA2-2B05B1F0722F" Code="IDENTIFIER_1" Name="Identifier_1" PrimaryIdentifier="TRUE">
+              <Attributes>
+                <Attribute Id="0BEDB2E1-71DD-411E-BF6B-881184DE147D" Code="COUNTRY_CODE" Name="Country Code" Ordinal="1" />
+              </Attributes></Identifier>
+          </Identifiers>
+          <Relationships>
+            <Relationship Id="111FBD07-0BA1-47E2-A254-51C48D7806B5" Code="CUSTOMER___COUNTRY" Name="Customer - Country" ParentEntity="COUNTRY" ParentEntityId="85E84D2D-5A89-434F-99BF-79E000B09B33" ChildEntity="CUSTOMER" ChildEntityId="0A44E527-F435-4F84-95C7-3D94F4EB02AC">
+              <RelationshipJoins>
+                <RelationshipJoin ParentEntity="COUNTRY" ParentAttribute="COUNTRY_CODE" ChildEntity="CUSTOMER" ChildAttribute="COUNTRY_CODE" />
+              </RelationshipJoins>
+            </Relationship>
+          </Relationships>
+        </Entity>
+        <Entity Id="0A44E527-F435-4F84-95C7-3D94F4EB02AC" Code="CUSTOMER" Name="Customer">
+          <Attributes>
+            <Attribute Id="B297599A-EB2D-4CEE-B50E-F900ED01A577" Code="CUSTOMER_ID" Name="Customer ID" Ordinal="1" PdDataType="I" PdLength="0" PdPrecision="0" Primary="TRUE" Mandatory="TRUE"></Attribute>
+            <Attribute Id="AA85670A-AEE8-4564-AEF2-4BE1F54CCE4D" Code="COUNTRY_CODE" Name="Country Code" Ordinal="2" PdDataType="VA3" PdLength="3" PdPrecision="0" Foreign="TRUE"></Attribute>
+            <Attribute Id="A39407A1-FE6E-4AC0-A9D6-A5B79BA939A9" Code="FIRST_NAME" Name="First Name" Ordinal="3" PdDataType="VA100" PdLength="100" PdPrecision="0"></Attribute>
+            <Attribute Id="883117BE-7E06-43D0-B58C-CE47655C58DF" Code="LAST_NAME" Name="Last Name" Ordinal="4" PdDataType="VA100" PdLength="100" PdPrecision="0"></Attribute>
+          </Attributes>
+          <Identifiers>
+            <Identifier Id="CEC52CB6-EF59-4BE0-87AA-4B8F9065A5A7" Code="IDENTIFIER_1" Name="Identifier_1" PrimaryIdentifier="TRUE">
+              <Attributes>
+                <Attribute Id="B297599A-EB2D-4CEE-B50E-F900ED01A577" Code="CUSTOMER_ID" Name="Customer ID" Ordinal="1" />
+              </Attributes></Identifier>
+          </Identifiers>
+          <Relationships>
+            <Relationship Id="111FBD07-0BA1-47E2-A254-51C48D7806B5" Code="CUSTOMER___COUNTRY" Name="Customer - Country" ParentEntity="COUNTRY" ParentEntityId="85E84D2D-5A89-434F-99BF-79E000B09B33" ChildEntity="CUSTOMER" ChildEntityId="0A44E527-F435-4F84-95C7-3D94F4EB02AC">
+              <RelationshipJoins>
+                <RelationshipJoin ParentEntity="COUNTRY" ParentAttribute="COUNTRY_CODE" ChildEntity="CUSTOMER" ChildAttribute="COUNTRY_CODE" />
+              </RelationshipJoins>
+            </Relationship>
+            <Relationship Id="F55C9CF8-9094-418D-B995-9AA2BB4DDA6E" Code="ORDER___CUSTOMER" Name="Order - Customer" ParentEntity="CUSTOMER" ParentEntityId="0A44E527-F435-4F84-95C7-3D94F4EB02AC" ChildEntity="ORDER" ChildEntityId="61F76088-DAAF-4D88-A8DE-6129A9E5E911">
+              <RelationshipJoins>
+                <RelationshipJoin ParentEntity="CUSTOMER" ParentAttribute="CUSTOMER_ID" ChildEntity="ORDER" ChildAttribute="CUSTOMER_ID" />
+              </RelationshipJoins>
+            </Relationship>
+          </Relationships>
+        </Entity>
+        <Entity Id="61F76088-DAAF-4D88-A8DE-6129A9E5E911" Code="ORDER" Name="Order">
+          <Attributes>
+            <Attribute Id="8E5694DC-314E-41B2-9085-A04A6D2AC58E" Code="CUSTOMER_ID" Name="Customer ID" Ordinal="1" PdDataType="I" PdLength="0" PdPrecision="0" Foreign="TRUE"></Attribute>
+            <Attribute Id="239141DD-5985-4136-B24E-65A9960200CA" Code="ORDER_ID" Name="Order ID" Ordinal="2" PdDataType="I" PdLength="0" PdPrecision="0" Primary="TRUE" Mandatory="TRUE"></Attribute>
+            <Attribute Id="A926E3A1-5F3A-4C24-A6F4-DC9F3A573D88" Code="ORDER_DATE" Name="Order Date" Ordinal="3" PdDataType="D" PdLength="0" PdPrecision="0"></Attribute>
+          </Attributes>
+          <Identifiers>
+            <Identifier Id="D6769587-04A5-4E5B-B0B3-A580D8B54F22" Code="IDENTIFIER_1" Name="Identifier_1" PrimaryIdentifier="TRUE">
+              <Attributes>
+                <Attribute Id="239141DD-5985-4136-B24E-65A9960200CA" Code="ORDER_ID" Name="Order ID" Ordinal="1" />
+              </Attributes></Identifier>
+          </Identifiers>
+          <Relationships>
+            <Relationship Id="F55C9CF8-9094-418D-B995-9AA2BB4DDA6E" Code="ORDER___CUSTOMER" Name="Order - Customer" ParentEntity="CUSTOMER" ParentEntityId="0A44E527-F435-4F84-95C7-3D94F4EB02AC" ChildEntity="ORDER" ChildEntityId="61F76088-DAAF-4D88-A8DE-6129A9E5E911">
+              <RelationshipJoins>
+                <RelationshipJoin ParentEntity="CUSTOMER" ParentAttribute="CUSTOMER_ID" ChildEntity="ORDER" ChildAttribute="CUSTOMER_ID" />
+              </RelationshipJoins>
+            </Relationship>
+            <Relationship Id="B10A527E-8328-4C49-8B9D-47A62E0C138E" Code="ORDER_DETAIL___ORDER" Name="Order detail - order" ParentEntity="ORDER" ParentEntityId="61F76088-DAAF-4D88-A8DE-6129A9E5E911" ChildEntity="ORDER_DETAIL" ChildEntityId="011DEBEE-11C4-4F7A-9EC7-4DF52F838056">
+              <RelationshipJoins>
+                <RelationshipJoin ParentEntity="ORDER" ParentAttribute="ORDER_ID" ChildEntity="ORDER_DETAIL" ChildAttribute="ORDER_ID" />
+              </RelationshipJoins>
+            </Relationship>
+          </Relationships>
+        </Entity>
+        <Entity Id="011DEBEE-11C4-4F7A-9EC7-4DF52F838056" Code="ORDER_DETAIL" Name="Order Detail">
+          <Attributes>
+            <Attribute Id="2F609DB0-73D2-4DAE-98E7-5B6C82F2B030" Code="LINE_NUMBER" Name="Line Number" Ordinal="1" PdDataType="I" PdLength="0" PdPrecision="0" Primary="TRUE" Mandatory="TRUE"></Attribute>
+            <Attribute Id="CCE27434-CDA0-48A1-BCB4-FBEB6F596228" Code="ORDER_ID" Name="Order ID" Ordinal="2" PdDataType="I" PdLength="0" PdPrecision="0" Foreign="TRUE"></Attribute>
+            <Attribute Id="A887E5A7-2CCE-4614-9D3B-A544BEE64522" Code="ARTICLE_ID" Name="Article ID" Ordinal="3" PdDataType="I" PdLength="0" PdPrecision="0" Mandatory="TRUE"></Attribute>
+            <Attribute Id="01FA5457-BB28-4D6B-8BDF-0E92ECE6B053" Code="AMOUNT" Name="Amount" Ordinal="4" PdDataType="I" PdLength="0" PdPrecision="0"></Attribute>
+          </Attributes>
+          <Identifiers>
+            <Identifier Id="D6B6B2B7-89C7-4241-AD9C-C866E159BE94" Code="IDENTIFIER_1" Name="Identifier_1" PrimaryIdentifier="TRUE">
+              <Attributes>
+                <Attribute Id="2F609DB0-73D2-4DAE-98E7-5B6C82F2B030" Code="LINE_NUMBER" Name="Line Number" Ordinal="1" />
+              </Attributes></Identifier>
+          </Identifiers>
+          <Relationships>
+            <Relationship Id="B10A527E-8328-4C49-8B9D-47A62E0C138E" Code="ORDER_DETAIL___ORDER" Name="Order detail - order" ParentEntity="ORDER" ParentEntityId="61F76088-DAAF-4D88-A8DE-6129A9E5E911" ChildEntity="ORDER_DETAIL" ChildEntityId="011DEBEE-11C4-4F7A-9EC7-4DF52F838056">
+              <RelationshipJoins>
+                <RelationshipJoin ParentEntity="ORDER" ParentAttribute="ORDER_ID" ChildEntity="ORDER_DETAIL" ChildAttribute="ORDER_ID" />
+              </RelationshipJoins>
+            </Relationship>
+          </Relationships>
+        </Entity>
+      </Entities>
+    </Package>
+  </Packages>
+</Model>

@@ -1,0 +1,31 @@
+<o:Relationship Id="B10A527E-8328-4C49-8B9D-47A62E0C138E">
+<a:ObjectID>B10A527E-8328-4C49-8B9D-47A62E0C138E</a:ObjectID>
+<a:Name>Order detail - order</a:Name>
+<a:Code>ORDER_DETAIL___ORDER</a:Code>
+<a:CreationDate>1732012638</a:CreationDate>
+<a:Creator>BasBosman</a:Creator>
+<a:Entity1ToEntity2RoleCardinality>0,n</a:Entity1ToEntity2RoleCardinality>
+<a:Entity2ToEntity1RoleCardinality>0,1</a:Entity2ToEntity1RoleCardinality>
+<c:Object1>
+<o:Entity Ref="011DEBEE-11C4-4F7A-9EC7-4DF52F838056"/>
+</c:Object1>
+<c:Object2>
+<o:Entity Ref="61F76088-DAAF-4D88-A8DE-6129A9E5E911"/>
+</c:Object2>
+<c:Joins>
+<o:RelationshipJoin Id="DE9B708D-56F2-45B8-B952-23A3291107C4">
+<a:ObjectID>DE9B708D-56F2-45B8-B952-23A3291107C4</a:ObjectID>
+<a:CreationDate>1732012638</a:CreationDate>
+<a:Creator>BasBosman</a:Creator>
+<c:Object1>
+<o:EntityAttribute Ref="239141DD-5985-4136-B24E-65A9960200CA"/>
+</c:Object1>
+<c:Object2>
+<o:EntityAttribute Ref="CCE27434-CDA0-48A1-BCB4-FBEB6F596228"/>
+</c:Object2>
+</o:RelationshipJoin>
+</c:Joins>
+<c:ParentIdentifier>
+<o:Identifier Ref="D6769587-04A5-4E5B-B0B3-A580D8B54F22"/>
+</c:ParentIdentifier>
+</o:Relationship>

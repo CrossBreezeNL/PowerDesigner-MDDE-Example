@@ -1,0 +1,21 @@
+<o:RelationshipSymbol Id="SOURCE_DIAGRAM_Symbol_B10A527E-8328-4C49-8B9D-47A62E0C138E">
+<a:CreationDate>1732012638</a:CreationDate>
+<a:CenterTextOffset>(4125, 0)</a:CenterTextOffset>
+<a:ListOfPoints>((-9900,-3300),(-9900,-16500))</a:ListOfPoints>
+<a:CornerStyle>1</a:CornerStyle>
+<a:ArrowStyle>4371</a:ArrowStyle>
+<a:LineColor>11881048</a:LineColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>CENTER 0 Arial,8,N
+SOURCE 0 Arial,8,N
+DESTINATION 0 Arial,8,N</a:FontList>
+<c:SourceSymbol>
+<o:EntitySymbol Ref="SOURCE_DIAGRAM_Entity_61F76088-DAAF-4D88-A8DE-6129A9E5E911"/>
+</c:SourceSymbol>
+<c:DestinationSymbol>
+<o:EntitySymbol Ref="SOURCE_DIAGRAM_Entity_011DEBEE-11C4-4F7A-9EC7-4DF52F838056"/>
+</c:DestinationSymbol>
+<c:Object>
+<o:Relationship Ref="B10A527E-8328-4C49-8B9D-47A62E0C138E"/>
+</c:Object>
+</o:RelationshipSymbol>

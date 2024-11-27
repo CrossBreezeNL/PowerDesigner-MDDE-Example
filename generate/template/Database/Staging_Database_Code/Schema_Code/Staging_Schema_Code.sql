@@ -1,0 +1,1 @@
+CREATE SCHEMA [Staging_Schema_Code];

@@ -1,0 +1,59 @@
+<o:Entity Id="011DEBEE-11C4-4F7A-9EC7-4DF52F838056">
+<a:ObjectID>011DEBEE-11C4-4F7A-9EC7-4DF52F838056</a:ObjectID>
+<a:Name>Order Detail</a:Name>
+<a:Code>ORDER_DETAIL</a:Code>
+<a:CreationDate>1732012323</a:CreationDate>
+<a:Creator>BasBosman</a:Creator>
+<c:Identifiers>
+<o:Identifier Id="D6B6B2B7-89C7-4241-AD9C-C866E159BE94">
+<a:ObjectID>D6B6B2B7-89C7-4241-AD9C-C866E159BE94</a:ObjectID>
+<a:Name>Identifier_1</a:Name>
+<a:Code>IDENTIFIER_1</a:Code>
+<a:CreationDate>1732012404</a:CreationDate>
+<a:Creator>BasBosman</a:Creator>
+<c:Identifier.Attributes>
+<o:EntityAttribute Ref="2F609DB0-73D2-4DAE-98E7-5B6C82F2B030"/>
+</c:Identifier.Attributes>
+</o:Identifier>
+</c:Identifiers>
+<c:PrimaryIdentifier>
+<o:Identifier Ref="D6B6B2B7-89C7-4241-AD9C-C866E159BE94"/>
+</c:PrimaryIdentifier>
+<c:Attributes>
+<o:EntityAttribute Id="2F609DB0-73D2-4DAE-98E7-5B6C82F2B030">
+<a:ObjectID>2F609DB0-73D2-4DAE-98E7-5B6C82F2B030</a:ObjectID>
+<a:Name>Line Number</a:Name>
+<a:Code>LINE_NUMBER</a:Code>
+<a:CreationDate>1732012404</a:CreationDate>
+<a:Creator>BasBosman</a:Creator>
+<a:DataType>I</a:DataType>
+<a:LogicalAttribute.Mandatory>1</a:LogicalAttribute.Mandatory>
+</o:EntityAttribute>
+<o:EntityAttribute Id="CCE27434-CDA0-48A1-BCB4-FBEB6F596228">
+<a:ObjectID>CCE27434-CDA0-48A1-BCB4-FBEB6F596228</a:ObjectID>
+<a:Name>Order ID</a:Name>
+<a:Code>ORDER_ID</a:Code>
+<a:CreationDate>1732012638</a:CreationDate>
+<a:Creator>BasBosman</a:Creator>
+<a:DataType>I</a:DataType>
+<a:AutoMigrated>1</a:AutoMigrated>
+</o:EntityAttribute>
+<o:EntityAttribute Id="A887E5A7-2CCE-4614-9D3B-A544BEE64522">
+<a:ObjectID>A887E5A7-2CCE-4614-9D3B-A544BEE64522</a:ObjectID>
+<a:Name>Article ID</a:Name>
+<a:Code>ARTICLE_ID</a:Code>
+<a:CreationDate>1732012404</a:CreationDate>
+<a:Creator>BasBosman</a:Creator>
+<a:DataType>I</a:DataType>
+<a:LogicalAttribute.Mandatory>1</a:LogicalAttribute.Mandatory>
+</o:EntityAttribute>
+<o:EntityAttribute Id="01FA5457-BB28-4D6B-8BDF-0E92ECE6B053">
+<a:ObjectID>01FA5457-BB28-4D6B-8BDF-0E92ECE6B053</a:ObjectID>
+<a:Name>Amount</a:Name>
+<a:Code>AMOUNT</a:Code>
+<a:CreationDate>1732012471</a:CreationDate>
+<a:Creator>BasBosman</a:Creator>
+<a:DataType>I</a:DataType>
+</o:EntityAttribute>
+</c:Attributes>
+</o:Entity>

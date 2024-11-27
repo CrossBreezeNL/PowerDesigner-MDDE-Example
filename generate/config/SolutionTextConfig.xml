@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XGenConfig>
+    <Model  />
+
+    <TextTemplate rootSectionName="Database">
+        <FileFormat commentNodeXPath="@XGAnnotation" />
+        <Output type="output_per_element" />
+    </TextTemplate>
+
+    <Binding>
+        <SectionModelBinding section="Database" modelXPath="/Database" />
+    </Binding>
+</XGenConfig>

@@ -1,0 +1,103 @@
+{
+    "name": "pipeline-copy-data",
+    "objectId": "46c3f42f-2989-4ad0-adda-82e6571df11e",
+    "properties": {
+        "activities": [
+            {
+                "name": "Copy data1",
+                "type": "Copy",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "source": {
+                        "type": "AzureSqlSource",
+                        "additionalColumns": [
+                            {
+                                "name": "Stage_DateTime",
+                                "value": {
+                                    "value": "@formatDateTime(pipeline().TriggerTime, 'yyyy-MM-dd HH:mm:ss.fffffff')",
+                                    "type": "Expression"
+                                }
+                            }
+                        ],
+                        "queryTimeout": "02:00:00",
+                        "partitionOption": "None",
+                        "datasetSettings": {
+                            "annotations": [],
+                            "type": "AzureSqlTable",
+                            "schema": [],
+                            "typeProperties": {
+                                "schema": {
+                                    "value": "@pipeline().parameters.schema_name",
+                                    "type": "Expression"
+                                },
+                                "table": {
+                                    "value": "@pipeline().parameters.table_name",
+                                    "type": "Expression"
+                                },
+                                "database": "MDDE_Example"
+                            },
+                            "externalReferences": {
+                                "connection": "e622a3d7-a8a9-4d9d-8800-5d62d0982ab1"
+                            }
+                        }
+                    },
+                    "sink": {
+                        "type": "AzureSqlSink",
+                        "preCopyScript": {
+                            "value": "@concat('TRUNCATE TABLE Staging_', pipeline().parameters.schema_name, '.', pipeline().parameters.table_name)",
+                            "type": "Expression"
+                        },
+                        "writeBehavior": "insert",
+                        "sqlWriterUseTableLock": false,
+                        "disableMetricsCollection": false,
+                        "datasetSettings": {
+                            "annotations": [],
+                            "type": "AzureSqlTable",
+                            "schema": [],
+                            "typeProperties": {
+                                "schema": {
+                                    "value": "@concat('Staging_', pipeline().parameters.schema_name)",
+                                    "type": "Expression"
+                                },
+                                "table": {
+                                    "value": "@pipeline().parameters.table_name",
+                                    "type": "Expression"
+                                },
+                                "database": "Staging-MDDE-Example"
+                            },
+                            "externalReferences": {
+                                "connection": "cfe04672-f304-405c-8cc0-cd105fd1237d"
+                            }
+                        }
+                    },
+                    "enableStaging": false,
+                    "translator": {
+                        "type": "TabularTranslator",
+                        "typeConversion": true,
+                        "typeConversionSettings": {
+                            "allowDataTruncation": true,
+                            "treatBooleanAsNumber": false
+                        }
+                    }
+                }
+            }
+        ],
+        "parameters": {
+            "schema_name": {
+                "type": "string"
+            },
+            "table_name": {
+                "type": "string"
+            }
+        },
+        "lastModifiedByObjectId": "a0a4d987-4842-4d7e-940d-f0ea8e00e70e",
+        "lastPublishTime": "2024-11-25T12:42:16Z"
+    }
+}
