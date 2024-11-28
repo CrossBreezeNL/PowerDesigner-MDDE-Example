@@ -3,12 +3,13 @@ from datetime import datetime, timedelta
 from airflow.models import DAG
 from apache_airflow_microsoft_fabric_plugin.operators.fabric import FabricRunItemOperator
 
-def run_adfpipelines(SchemaName, TableName):
+def run_staging_pipeline(SchemaName, TableName):
     
-    run_adf_pipeline = FabricRunItemOperator(
+    fabric_run_staging_pipeline = FabricRunItemOperator(
         task_id = "stage" + SchemaName + "." + TableName,
+        # The item_id is the identifier of the Fabric Copy Data Pipeline.
         item_id = "46c3f42f-2989-4ad0-adda-82e6571df11e",
-        job_type="Pipeline",
+        job_type = "Pipeline",
 
         job_params = {
             "schema_name" : SchemaName,
@@ -19,12 +20,12 @@ def run_adfpipelines(SchemaName, TableName):
         deferrable=False,
     )
 
-    run_adf_pipeline
+    fabric_run_staging_pipeline
 
     return 
 
 with DAG(
-    dag_id="run_fabric_item",
+    dag_id="load_Database_Code_staging_tables",
     start_date=datetime(2022, 5, 14),
     schedule_interval="@daily",
     catchup=False,
@@ -36,5 +37,5 @@ with DAG(
     },
     default_view="graph",
 ) as dag:
-    ##-- @XGenTextSection(name="Table")
-    run_adfpipelines("Schema_Code", "Table_Name")
+    # @XGenTextSection(name="Table")
+    run_staging_pipeline("Schema_Code", "Table_Name")

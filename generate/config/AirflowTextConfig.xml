@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <XGenConfig>
     <Model />
-    <TextTemplate rootSectionName="Schema">
-        <FileFormat currentAccessor="_" singleLineCommentPrefix="##--" annotationPrefix="@XGen"
-            annotationArgsPrefix="(" annotationArgsSuffix=")" />
+    
+    <TextTemplate rootSectionName="Database">
+        <FileFormat singleLineCommentPrefix="#" />
         <Output type="single_output" />
     </TextTemplate>
+    
     <Binding>
 
-        <SectionModelBinding section="Schema" modelXPath="Database/Schemas/Schema">
-            <SectionModelBinding section="Table" modelXPath="Tables/Table">
+        <SectionModelBinding section="Database" modelXPath="/Database">
+            <SectionModelBinding section="Table" modelXPath="Schemas/Schema/Tables/Table">
                 <Placeholders>
                     <Placeholder name="Schema" modelXPath="../.." />
                 </Placeholders>
