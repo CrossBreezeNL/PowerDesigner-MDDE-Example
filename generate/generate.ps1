@@ -45,7 +45,8 @@ cmd /c $XgGenCmd `
     -mtc "MDDE_EXAMPLE.pdm.xml::Database/Staging_Database_Code/Schema_Code/Staging_Schema_Code.sql::SchemaTextConfig.xml" `
     -mtc "MDDE_EXAMPLE.pdm.xml::Database/Staging_Database_Code/Schema_Code/Tables/Table_Code.sql::TableTextConfig.xml" `
     -mtc "MDDE_EXAMPLE.pdm.xml::Database/Database_Code.sln::SolutionTextConfig.xml"`
-    -mtc "MDDE_EXAMPLE.pdm.xml::Pipeline/Airflow/load_Database_Code_staging_tables.py::AirflowTextConfig.xml"
+    -mtc "MDDE_EXAMPLE.pdm.xml::Pipeline/Airflow/load_Database_Code_staging_tables.py::AirflowTextConfig.xml"`
+    -mtc "MDDE_EXAMPLE.pdm.xml::Pipeline/FabricPipeline/PipelineCopyData_Table_Code.json::FabricPipelineTextConfig.xml"
 
 # Check whether the generation ended with an error.
 if ($LASTEXITCODE -eq 1) {

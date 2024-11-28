@@ -4,7 +4,7 @@
     "properties": {
         "activities": [
             {
-                "name": "Copy data1",
+                "name": "Copy Database_Name",
                 "type": "Copy",
                 "dependsOn": [],
                 "policy": {
@@ -41,7 +41,7 @@
                                     "value": "@pipeline().parameters.table_name",
                                     "type": "Expression"
                                 },
-                                "database": "MDDE_Example"
+                                "database": "Database_Code"
                             },
                             "externalReferences": {
                                 "connection": "e622a3d7-a8a9-4d9d-8800-5d62d0982ab1"
@@ -70,7 +70,7 @@
                                     "value": "@pipeline().parameters.table_name",
                                     "type": "Expression"
                                 },
-                                "database": "Staging-MDDE-Example"
+                                "database": "Staging_Database_Code"
                             },
                             "externalReferences": {
                                 "connection": "cfe04672-f304-405c-8cc0-cd105fd1237d"
