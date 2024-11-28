@@ -13,22 +13,22 @@
 <a:Code>MDDE_EXAMPLE</a:Code>
 <a:CreationDate>1710341890</a:CreationDate>
 <a:Creator>HarmenWessels</a:Creator>
-<xi:include href="Model/a_PackageOptionsText.xml" />
-<xi:include href="Model/a_ModelOptionsText.xml" />
+<xi:include href="Model/a_PackageOptionsText.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+<xi:include href="Model/a_ModelOptionsText.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 <c:ExtendedModelDefinitions>
-<xi:include href="ExtendedModelDefinitions/Shortcuts/MDDE_LDM.xml" />
+<xi:include href="ExtendedModelDefinitions/Shortcuts/MDDE_LDM.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 </c:ExtendedModelDefinitions>
 <c:LogicalDiagrams>
-<xi:include href="LogicalDiagrams/MDDE_EXAMPLE_DIAGRAM/MDDE_EXAMPLE_DIAGRAM.xml" />
+<xi:include href="LogicalDiagrams/MDDE_EXAMPLE_DIAGRAM/MDDE_EXAMPLE_DIAGRAM.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 </c:LogicalDiagrams>
 <c:Packages>
-<xi:include href="Packages/EXAMPLE_SOURCE/EXAMPLE_SOURCE.xml" />
+<xi:include href="Packages/EXAMPLE_SOURCE/EXAMPLE_SOURCE.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 </c:Packages>
 <c:DefaultDiagram>
 <o:LogicalDiagram Ref="4714423B-7437-4688-987D-A1C6E1E12EF0"/>
 </c:DefaultDiagram>
 <c:TargetModels>
-<xi:include href="TargetModels/MDDE_LDM.xml" />
+<xi:include href="TargetModels/MDDE_LDM.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 </c:TargetModels>
 </o:Model>
 </c:Children>

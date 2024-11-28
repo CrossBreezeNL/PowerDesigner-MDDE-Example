@@ -1,24 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <XGenConfig>
-    <Model namespaceAware="true">
-        <ModelNamespaces>
-            <ModelNamespace prefix="a" namespace="attribute" />
-            <ModelNamespace prefix="c" namespace="collection" />
-            <ModelNamespace prefix="o" namespace="object" />
-            <ModelNamespace prefix="xi" namespace="http://www.w3.org/2001/XInclude" />
-        </ModelNamespaces>
+    <Model>
+        <ModelAttributeInjections>
+            <!-- Derive whether the data type contains length and precision. -->
+            <ModelAttributeInjection modelXPath="//Attributes/Attribute[@PdDataType and ends-with(@PdDataType, concat(@PdLength, ',', @PdPrecision))]" targetAttribute="PdDataTypeLengthAndPrecisionUsage" targetValue="LengthPrecision" />
+            <ModelAttributeInjection modelXPath="//Attributes/Attribute[@PdDataType and not(@PdDataTypeLengthAndPrecisionUsage) and ends-with(@PdDataType, @PdLength)]" targetAttribute="PdDataTypeLengthAndPrecisionUsage" targetValue="Length" />
+            <ModelAttributeInjection modelXPath="//Attributes/Attribute[@PdDataType and not(@PdDataTypeLengthAndPrecisionUsage) and ends-with(@PdDataType, @PdPrecision)]" targetAttribute="PdDataTypeLengthAndPrecisionUsage" targetValue="Precision" />
+            <ModelAttributeInjection modelXPath="//Attributes/Attribute[@PdDataType and not(@PdDataTypeLengthAndPrecisionUsage)]" targetAttribute="PdDataTypeLengthAndPrecisionUsage" targetValue="None" />
+        
+            <!-- Derive the base PowerDesigner datatype from the PdDataType, where the length, precision and scale are included. -->
+            <!-- Data types using Length and Precision -->
+            <ModelAttributeInjection modelXPath="//Attributes/Attribute[@PdDataType and @PdDataTypeLengthAndPrecisionUsage = 'LengthPrecision']" targetAttribute="PdBaseDataType" targetXPath="substring(@PdDataType, 1, string-length(@PdDataType) - string-length(concat(@PdLength, ',', @PdPrecision)))" />
+            <!-- Data types using Length -->
+            <ModelAttributeInjection modelXPath="//Attributes/Attribute[@PdDataType and @PdDataTypeLengthAndPrecisionUsage = 'Length']" targetAttribute="PdBaseDataType" targetXPath="substring(@PdDataType, 1, string-length(@PdDataType) - string-length(@PdLength))" />
+            <!-- Data types using Precision -->
+            <ModelAttributeInjection modelXPath="//Attributes/Attribute[@PdDataType and @PdDataTypeLengthAndPrecisionUsage = 'Precision']" targetAttribute="PdBaseDataType" targetXPath="substring(@PdDataType, 1, string-length(@PdDataType) - string-length(@PdPrecision))" />
+            <!-- Data types not using Length and/or Precision -->
+            <ModelAttributeInjection modelXPath="//Attributes/Attribute[@PdDataType and @PdDataTypeLengthAndPrecisionUsage = 'None']" targetAttribute="PdBaseDataType" targetXPath="@PdDataType" />
+
+            <!-- Using the PdBaseDataType we can derive the SqlBaseDataType. -->
+            <ModelAttributeInjection modelXPath="//Attributes/Attribute[@PdBaseDataType]" targetAttribute="SqlBaseDataType">
+                <ValueMappings inputNode="@PdBaseDataType">
+                    <!-- Numeric data types. -->
+                    <ValueMapping inputValue="I" outputValue="INTEGER" />
+                    <ValueMapping inputValue="N" outputValue="NUMERIC" />
+                    <ValueMapping inputValue="DC" outputValue="DECIMAL" />
+
+                    <!-- Character data types. -->
+                    <ValueMapping inputValue="VA" outputValue="VARCHAR" />
+                    <ValueMapping inputValue="VMBT" outputValue="NVARCHAR" />
+
+                    <!-- Date/Time data types. -->
+                    <ValueMapping inputValue="D" outputValue="DATE" />
+                </ValueMappings>
+            </ModelAttributeInjection>
+
+            <!-- Construct the full SQL data type using the base, precision and length. -->
+            <!-- Data types using Length and Precision -->
+            <ModelAttributeInjection modelXPath="//Attributes/Attribute[@SqlBaseDataType and @PdDataTypeLengthAndPrecisionUsage = 'LengthPrecision']" targetAttribute="SqlDataType" targetXPath="concat(@SqlBaseDataType, '(', @PdLength, ',', @PdPrecision, ')')" />
+            <!-- Data types using Length -->
+            <ModelAttributeInjection modelXPath="//Attributes/Attribute[@SqlBaseDataType and @PdDataTypeLengthAndPrecisionUsage = 'Length']" targetAttribute="SqlDataType" targetXPath="concat(@SqlBaseDataType, '(', @PdLength, ')')" />
+            <!-- Data types using Precision -->
+            <ModelAttributeInjection modelXPath="//Attributes/Attribute[@SqlBaseDataType and @PdDataTypeLengthAndPrecisionUsage = 'Precision']" targetAttribute="SqlDataType" targetXPath="concat(@SqlBaseDataType, '(', @PdPrecision, ')')" />
+            <!-- Data types not using Length and/or Precision -->
+            <ModelAttributeInjection modelXPath="//Attributes/Attribute[@SqlBaseDataType and @PdDataTypeLengthAndPrecisionUsage = 'None']" targetAttribute="SqlDataType" targetXPath="@SqlBaseDataType" />
+        </ModelAttributeInjections>
     </Model>
 
     <XmlTemplate rootSectionName="Model">
-        <FileFormat commentNodeXPath="@XGAnnotation" childAccessor="_" currentAccessor="-" />
+        <FileFormat commentNodeXPath="@XGAnnotation" />
         <Output type="output_per_element" />
     </XmlTemplate>
 
     <Binding>
-        <SectionModelBinding section="Model" modelXPath="/Model/RootObject/Children/Model">
+        <SectionModelBinding section="Model" modelXPath="/Model">
             <SectionModelBinding section="Package" modelXPath="Packages/Package">
                 <SectionModelBinding section="Entity" modelXPath="Entities/Entity">
-                    <SectionModelBinding section="Attribute" modelXPath="Attributes/EntityAttribute">
+                    <SectionModelBinding section="Attribute" modelXPath="Attributes/Attribute">
                     </SectionModelBinding>
                 </SectionModelBinding>
             </SectionModelBinding>

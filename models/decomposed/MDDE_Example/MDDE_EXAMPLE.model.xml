@@ -78,7 +78,7 @@
             <Attribute Id="2F609DB0-73D2-4DAE-98E7-5B6C82F2B030" Code="LINE_NUMBER" Name="Line Number" Ordinal="1" PdDataType="I" PdLength="0" PdPrecision="0" Primary="TRUE" Mandatory="TRUE"></Attribute>
             <Attribute Id="CCE27434-CDA0-48A1-BCB4-FBEB6F596228" Code="ORDER_ID" Name="Order ID" Ordinal="2" PdDataType="I" PdLength="0" PdPrecision="0" Foreign="TRUE"></Attribute>
             <Attribute Id="A887E5A7-2CCE-4614-9D3B-A544BEE64522" Code="ARTICLE_ID" Name="Article ID" Ordinal="3" PdDataType="I" PdLength="0" PdPrecision="0" Mandatory="TRUE"></Attribute>
-            <Attribute Id="01FA5457-BB28-4D6B-8BDF-0E92ECE6B053" Code="AMOUNT" Name="Amount" Ordinal="4" PdDataType="I" PdLength="0" PdPrecision="0"></Attribute>
+            <Attribute Id="01FA5457-BB28-4D6B-8BDF-0E92ECE6B053" Code="AMOUNT" Name="Amount" Ordinal="4" PdDataType="N28,6" PdLength="28" PdPrecision="6"></Attribute>
           </Attributes>
           <Identifiers>
             <Identifier Id="D6B6B2B7-89C7-4241-AD9C-C866E159BE94" Code="IDENTIFIER_1" Name="Identifier_1" PrimaryIdentifier="TRUE">

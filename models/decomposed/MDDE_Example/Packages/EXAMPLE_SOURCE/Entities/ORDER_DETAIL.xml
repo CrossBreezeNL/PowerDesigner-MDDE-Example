@@ -53,7 +53,9 @@
 <a:Code>AMOUNT</a:Code>
 <a:CreationDate>1732012471</a:CreationDate>
 <a:Creator>BasBosman</a:Creator>
-<a:DataType>I</a:DataType>
+<a:DataType>N28,6</a:DataType>
+<a:Length>28</a:Length>
+<a:Precision>6</a:Precision>
 </o:EntityAttribute>
 </c:Attributes>
 </o:Entity>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Database Code="Model_Code" Name="Model_Name">
+    <Schemas>
+        <Schema Code="Package_Code" Name="Package_Name" XGAnnotation="@XGenXmlSection(name='Package')">
+            <Tables>
+                <Table Code="Entity_Code" Name="Entity_Name" XGAnnotation="@XGenXmlSection(name='Entity')">
+                    <Columns>
+                        <Column Code="Attribute_Code" Name="Attribute_Name" SqlDataType="Attribute_SqlDataType" IsPrimaryKeyColumn="Attribute_Primary" XGAnnotation="@XGenXmlSection(name='Attribute')" />
+                    </Columns>
+                </Table>
+            </Tables>
+        </Schema>
+    </Schemas>
+</Database>

@@ -5,20 +5,20 @@
 <a:CreationDate>1710341958</a:CreationDate>
 <a:Creator>HarmenWessels</a:Creator>
 <c:LogicalDiagrams>
-<xi:include href="LogicalDiagrams/SOURCE_DIAGRAM/SOURCE_DIAGRAM.xml" />
+<xi:include href="LogicalDiagrams/SOURCE_DIAGRAM/SOURCE_DIAGRAM.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 </c:LogicalDiagrams>
 <c:DefaultDiagram>
 <o:LogicalDiagram Ref="7585D600-E3C5-4A71-8673-930B7D3A80E0"/>
 </c:DefaultDiagram>
 <c:Entities>
-<xi:include href="Entities/CUSTOMER.xml" />
-<xi:include href="Entities/COUNTRY.xml" />
-<xi:include href="Entities/ORDER.xml" />
-<xi:include href="Entities/ORDER_DETAIL.xml" />
+<xi:include href="Entities/CUSTOMER.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+<xi:include href="Entities/COUNTRY.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+<xi:include href="Entities/ORDER.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+<xi:include href="Entities/ORDER_DETAIL.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 </c:Entities>
 <c:Relationships>
-<xi:include href="Relationships/CUSTOMER___COUNTRY.xml" />
-<xi:include href="Relationships/ORDER___CUSTOMER.xml" />
-<xi:include href="Relationships/ORDER_DETAIL___ORDER.xml" />
+<xi:include href="Relationships/CUSTOMER___COUNTRY.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+<xi:include href="Relationships/ORDER___CUSTOMER.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+<xi:include href="Relationships/ORDER_DETAIL___ORDER.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 </c:Relationships>
 </o:Package>
